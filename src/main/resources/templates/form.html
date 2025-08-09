@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calcular Percentilos</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<h1>Calculadora de percentilos fetales</h1>
+<form th:action="@{/percentiles}" th:object="${percentileForm}" method="post">
+    <label>Edad gestacional:</label>
+    <input type="number" th:field="*{weeks}" min="0" /> semanas
+    <input type="number" th:field="*{days}" min="0" max="6" /> días<br/>
+
+    <label>DBP (mm):</label>
+    <input type="number" th:field="*{bpd}" step="0.1" /><br/>
+
+    <label>CC (mm):</label>
+    <input type="number" th:field="*{hc}" step="0.1" /><br/>
+
+    <label>CA (mm):</label>
+    <input type="number" th:field="*{ac}" step="0.1" /><br/>
+
+    <label>LF (mm):</label>
+    <input type="number" th:field="*{fl}" step="0.1" /><br/>
+
+    <button type="submit">Calcular</button>
+</form>
+</body>
+</html>
+
