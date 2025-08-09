@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultados</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<h1>Resultados</h1>
+<p>Edad gestacional: <span th:text="${form.weeks}"></span> semanas y <span th:text="${form.days}"></span> días</p>
+<ul>
+    <li>DBP: <span th:text="${form.bpd}"></span> mm - Percentil <span th:text="${#numbers.formatDecimal(bpdPct,1,2)}"></span></li>
+    <li>CC: <span th:text="${form.hc}"></span> mm - Percentil <span th:text="${#numbers.formatDecimal(hcPct,1,2)}"></span></li>
+    <li>CA: <span th:text="${form.ac}"></span> mm - Percentil <span th:text="${#numbers.formatDecimal(acPct,1,2)}"></span></li>
+    <li>LF: <span th:text="${form.fl}"></span> mm - Percentil <span th:text="${#numbers.formatDecimal(flPct,1,2)}"></span></li>
+ </ul>
+
+<a th:href="@{/}">Nueva consulta</a>
+</body>
+</html>
+
